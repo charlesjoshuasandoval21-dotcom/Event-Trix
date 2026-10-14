@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-slate-50 font-sans text-slate-800 antialiased; overflow-x: hidden; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight text-navy-900; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-electric-500; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold
+      transition duration-150 disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline;
+  }
+  .btn-primary { @apply btn bg-electric-600 text-white shadow-sm hover:bg-electric-700 active:bg-electric-800; }
+  .btn-dark { @apply btn bg-navy-900 text-white hover:bg-navy-800; }
+  .btn-secondary { @apply btn border border-slate-300 bg-white text-navy-900 hover:border-slate-400 hover:bg-slate-50; }
+  .btn-ghost { @apply btn text-navy-700 hover:bg-navy-50; }
+  .btn-danger { @apply btn bg-red-600 text-white hover:bg-red-700; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .btn-lg { @apply px-6 py-3 text-base; }
+
+  .input {
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900
+      placeholder:text-slate-400 transition focus:border-electric-500 focus:outline-none focus:ring-2 focus:ring-electric-500/25
+      disabled:bg-slate-100;
+  }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-500/20; }
+  .label { @apply mb-1.5 block text-sm font-medium text-navy-800; }
+  .card { @apply rounded-xl border border-slate-200 bg-white shadow-card; }
+  .container-page { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+}
+
+@layer components {
+  .dash {
+    background-color: #eceff4;
+    background-image: radial-gradient(rgba(15, 28, 58, 0.09) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .dash .card { @apply rounded-sm border-navy-900/15 shadow-none; }
+  .dash .btn { @apply rounded-sm; }
+  .dash .input { @apply rounded-sm; }
+  .dash span.rounded-full { border-radius: 2px; }
+  .dash h1, .dash h2, .dash h3 { @apply tracking-tight; }
+
+  .eyebrow { @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-navy-500; }
+  .panel { @apply min-w-0 border border-navy-900/15 bg-white; }
+  .panel-head { @apply flex items-center justify-between border-b border-navy-900/10 px-5 py-3; }
+  .tag { @apply inline-flex items-center border border-navy-900/20 px-1.5 py-0.5 font-mono text-[10px] font-medium uppercase tracking-wider text-navy-700; }
+}
